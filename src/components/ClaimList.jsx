@@ -1,6 +1,7 @@
 import React from "react";
 import ClaimItem from "./ClaimItem";
 
+// list of ClaimItems returned
 const ClaimList = ({ claims, expandedClaim, handleExpand }) => {
   return (
     <div className="claims-list">

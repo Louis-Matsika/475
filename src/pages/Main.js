@@ -15,7 +15,7 @@ const Main = () => {
       setError("");
       const response = await fetch(
         `https://factchecktools.googleapis.com/v1alpha1/claims:search?query=${query}&key=${
-          'AIzaSyBbsDzr7taySaeVp3xDcO7zkPwb2mIjwCQ'
+          "AIzaSyBbsDzr7taySaeVp3xDcO7zkPwb2mIjwCQ"
         }&pageSize=20`
       );
       if (!response.ok) {

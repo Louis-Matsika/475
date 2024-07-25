@@ -1,5 +1,8 @@
 import React from "react";
 
+//each claim item is handled and displayed as its own 'ClaimItem'
+//each claim starts as a title displayed in the browser which can then be expanded for more details
+//expanded claims include further details provided by googles api
 const ClaimItem = ({ claim, isExpanded, handleExpand }) => {
   return (
     <div className="claim-item">
@@ -19,6 +22,7 @@ const ClaimItem = ({ claim, isExpanded, handleExpand }) => {
               {new Date(claim.claimDate).toLocaleDateString()}
             </p>
           )}
+
           {claim.claimReview &&
             claim.claimReview.map((review, reviewIndex) => (
               <div key={reviewIndex} className="review-item">
