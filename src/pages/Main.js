@@ -16,7 +16,7 @@ const Main = () => {
       const response = await fetch(
         `https://factchecktools.googleapis.com/v1alpha1/claims:search?query=${query}&key=${
           "AIzaSyBbsDzr7taySaeVp3xDcO7zkPwb2mIjwCQ"
-        }&pageSize=20`
+        }&languageCode="en-US"&pageSize=20`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch data. Please try again later.");
