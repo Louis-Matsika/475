@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SearchBar from "../components/SearchBar.jsx";
 import ClaimList from "../components/ClaimList";
-import "../App.css"; // Import your CSS file for styling
+import "../App.css";
 
 const Main = () => {
   const [query, setQuery] = useState("");
@@ -13,6 +13,7 @@ const Main = () => {
     console.log();
     try {
       setError("");
+      //API params could be more customised in the future
       const response = await fetch(
         `https://factchecktools.googleapis.com/v1alpha1/claims:search?query=${query}&key=${
           "AIzaSyBbsDzr7taySaeVp3xDcO7zkPwb2mIjwCQ"
