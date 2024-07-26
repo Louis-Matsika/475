@@ -1,58 +1,225 @@
-.search-bar input {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-right: 10px;
+/******************/
+/* GENERAL */
+/******************/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-.search-bar button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+*:focus {
+	outline: 5px solid #f3c20f;
 }
 
-.search-bar button:hover {
-  background-color: #0056b3;
+body {
+	position: relative;
+	background: linear-gradient(to bottom, #f0f0f0 10%, #ffffff);
+	background-attachment: fixed;
+	/* font-family: "Convection", sans-serif;
+	font-family: "Convection Condensed", sans-serif; */
+	font-family: "Convection Medium", sans-serif;
 }
+
+h1 {
+	text-align: center;
+	font-size: 60px;
+	line-height: 1;
+	font-weight: 700;
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+span {
+	color: #fff;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+}
+
+a:link,
+a:visited {
+	color: #ffd53b;
+	text-decoration: none;
+}
+
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+
+/******************/
+/* HEADER */
+/******************/
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5px;
+	padding: 20px 20px 20px 0;
+	background-color: #f3c20f;
+}
+
+.bbc-logo {
+	position: absolute;
+	left: 20px;
+	height: 50px;
+}
+
+.braille-logo {
+	height: 30px;
+	margin-top: -7px;
+}
+
+h1 span {
+	margin-left: 2px;
+}
+
+/******************/
+/* NAV */
+/******************/
+nav {
+	border-bottom: 2px solid #000;
+	padding: 5px 0;
+	background-color: #1a1a1a;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+
+	list-style: none;
+	margin: 0 auto;
+	width: fit-content;
+}
+
+nav ul li {
+	line-height: 0.9;
+	padding: 0 10px;
+	border-right: 1px solid #ccc;
+}
+
+nav ul li:last-of-type {
+	border: none;
+}
+
+nav a:link,
+nav a:visited {
+	color: #ccc;
+	text-decoration: none;
+}
+
+nav a:hover,
+nav a:active {
+	text-decoration: underline;
+}
+
+/******************/
+/* SEARCH BAR */
+/******************/
+.search-bar {
+	display: flex;
+	width: 50%;
+	margin: 0 auto 40px auto;
+
+	font-size: 20px;
+}
+
+.search-input,
+.search-button {
+	font-family: inherit;
+	outline: none;
+	border: 3px solid #f3c20f;
+	font-size: 24px;
+}
+
+.search-input {
+	padding: 10px 20px;
+	width: 100%;
+}
+
+.search-input:focus-visible,
+.search-button:focus-visible {
+    outline: 5px solid #000;
+    z-index: 999;
+}
+
+.search-button {
+	font-weight: 700;
+	color: #000;
+
+	border-left: 0;
+	padding: 10px 60px;
+	cursor: pointer;
+	background: linear-gradient(to right bottom, #fdcc1c 10%, #ffd53b);
+}
+
+.search-button span {
+	font-size: 40px;
+	line-height: 0.1;
+}
+
+/******************/
+/* ERROR MESSAGE */
+/******************/
 
 .error-message {
-  color: red;
-  text-align: center;
-  margin-bottom: 20px;
+	color: red;
+	text-align: center;
 }
 
-.claims-list {
-  list-style-type: none;
-  padding: 0;
+/******************/
+/* CLAIMS */
+/******************/
+.container {
+	width: 50%;
+	margin: 0 auto 200px auto;
 }
 
 .claim-item {
-  margin-bottom: 15px;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f9f9f9;
+	font-size: 20px;
+	color: #fff;
+	padding: 11px 20px;
+	margin-bottom: 15px;
+	cursor: pointer;
+	background: linear-gradient(to right bottom, #000 10%, #1a1a1a);
+	border: 4px solid #1a1a1a;
 }
-.claim-date {
-  margin-bottom: 20px;
+
+.claim-item:focus {
+	outline: 5px solid #f3c20f;
 }
+
 .claim-text {
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
+	font-size: 24px;
 }
 
 .claim-details {
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid #ccc;
+	margin-top: 15px;
+	padding-top: 15px;
+	border-top: 1px solid #f0f0f0;
+}
+#Louis-box{
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: -3px;
+	display: flex;
+	justify-content: center;
 }
 
-.review-item {
-  margin-bottom: 10px;
+#speech-bub{
+	background-image: url("/public/speech-bub.png");
+	background-size: cover;
+	height: 200px;
+	width: 256px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: -50px;
+	margin-top: -40px;
+}
+
+#bub-text{
+	max-width: 170px;
 }

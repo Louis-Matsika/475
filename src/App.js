@@ -5,6 +5,7 @@ import Main from "./pages/Main";
 import Info from "./pages/Info";
 import NoPage from "./pages/NoPage";
 
+
 function App() {
   return (
     <BrowserRouter>

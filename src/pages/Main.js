@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import SearchBar from "../components/SearchBar.jsx";
 import ClaimList from "../components/ClaimList";
+import Louis from "../components/Louis.js";
+import bubText from "../components/bubText.js";
 import "../App.css";
+
 
 const Main = () => {
   const [query, setQuery] = useState("");
@@ -20,14 +23,17 @@ const Main = () => {
         }&languageCode="en-US"&pageSize=20`
       );
       if (!response.ok) {
+        bubText.changeBub = "Erm... you need to type something into the search bar first!";
         throw new Error("Failed to fetch data. Please try again later.");
       }
       const data = await response.json();
       if (data.claims && data.claims.length > 0) {
+        bubText.changeBub = "Okay I found some stuff, have a look!";
         setClaims(data.claims);
       } else {
         setClaims([]);
         setError("No results found. Please try a different query.");
+        bubText.changeBub = "Hmm, I couldn't find much on that...";
       }
     } catch (error) {
       setClaims([]);
@@ -41,6 +47,7 @@ const Main = () => {
 
   return (
     <>
+      <Louis/>
       <SearchBar
         query={query}
         setQuery={setQuery}
